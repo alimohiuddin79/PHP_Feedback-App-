@@ -1,0 +1,184 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(195, 230, 236);
+}
+
+h1, h2, h3, h4, p{
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+    font-weight: 100;
+    color: darkslategrey;
+}
+
+footer{
+    margin-top: 28px;
+    text-align: center;
+}
+
+.navigation{
+    display: flex;
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    padding: 0 100px;
+    transition: all 0.5s;
+}
+
+.navigation ul {
+    display: flex;
+}
+
+.navigation ul li{
+    width: 100%;
+    list-style: none;
+}
+
+.navigation ul li a{
+    width: 100%;
+    white-space: nowrap;
+    color: #302f2f;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 8px;
+    transition: color background-color 0.3s;
+}
+
+.navigation ul li a:not(:nth-last-child(3)){
+    margin-right: 0;
+}
+
+.navigation ul li a:hover{
+    color: #000;
+    
+}
+
+.hero-heading{
+    text-align: center;
+}
+
+.toggler{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.toggler::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: #000;
+    transform: translateY(-5px);
+    transition: 1s;
+}
+
+.toggler::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: #000;
+    transform: translateY(5px);
+    transition: 1s;
+}
+
+.navigation.active .toggler::before{
+    transform: translateY(0) rotate(-225deg);
+}
+
+.navigation.active .toggler::after{
+    transform: translateY(0) rotate(225deg);
+}
+
+form{
+    max-width: 556px;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input, textarea{
+    width: 380px;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 4px;
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid #76ca6b;
+}
+
+.primary-btn{
+    margin: 28px 0 12px;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.feedbacks{
+    max-width: 480px;
+    margin: 40px auto;
+}
+
+.invalid-text{
+    color: red;
+}
+
+input.invalid {
+    border: 2px solid red;
+}
+
+@media(max-width: 768px){
+    .toggler{
+        display: flex;
+    }
+    .navigation{
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation ul {
+        display: none;
+    }
+    .navigation.active{
+        height: 240px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .navigation.active ul{
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation.active ul li{
+        width: 100%;
+        margin: 0;
+        padding: 12px 0;
+    }
+    .navigation.active ul li:hover{
+        background-color: #7c7c7c;
+    }
+}
+
